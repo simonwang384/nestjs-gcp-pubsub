@@ -1,0 +1,54 @@
+{
+	"name": "nestjs-gcp-pubsub",
+	"version": "0.0.0",
+	"type": "module",
+	"description": "",
+	"main": "./dist/index.js",
+	"types": "./dist/index.d.ts",
+	"scripts": {
+		"dev": "concurrently 'tsc -w' 'nest build --watch'",
+		"build": "nest build && tsc --project tsconfig.json"
+	},
+	"publishConfig": {
+		"access": "public"
+	},
+	"exports": {
+		".": {
+			"import": "./dist/index.js",
+			"require": "./dist/index.js"
+		},
+		"./*": {
+			"import": "./dist/*.js",
+			"require": "./dist/*.js"
+		}
+	},
+	"files": [
+		"dist"
+	],
+	"peerDependencies": {
+		"@google-cloud/pubsub": "catalog:google-cloud",
+		"@nestjs/common": "catalog:nestjs",
+		"@nestjs/core": "catalog:nestjs",
+		"@nestjs/microservices": "catalog:nestjs",
+		"reflect-metadata": "catalog:nestjs",
+		"rxjs": "catalog:nestjs"
+	},
+	"devDependencies": {
+		"concurrently": "catalog:concurrently",
+		"@nestjs/cli": "catalog:nestjs",
+		"@nestjs/testing": "catalog:nestjs",
+		"@swc/cli": "catalog:swc",
+		"@swc/core": "catalog:swc",
+		"@types/node": "catalog:typescript",
+		"@vitest/coverage-v8": "catalog:vitest",
+		"ts-loader": "catalog:typescript",
+		"ts-node": "catalog:typescript",
+		"typescript": "catalog:typescript",
+		"unplugin-swc": "catalog:swc",
+		"vitest": "catalog:vitest"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"packageManager": "pnpm@10.30.3"
+}

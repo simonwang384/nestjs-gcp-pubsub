@@ -1,0 +1,21 @@
+{
+	"$schema": "https://swc.rs/schema.json",
+	"sourceMaps": true,
+	"isModule": true,
+	"module": {
+		"type": "nodenext",
+		"resolveFully": true
+	},
+	"jsc": {
+		"parser": {
+			"syntax": "typescript",
+			"decorators": true,
+			"dynamicImport": true,
+			"dts": true
+		},
+		"target": "esnext",
+		"baseUrl": "./"
+	},
+	"exclude": ["node_modules", ".*\\.spec|test\\.(j|t)s$"],
+	"minify": false
+}

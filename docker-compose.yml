@@ -1,0 +1,21 @@
+services:
+  pubsub:
+    image: google/cloud-sdk:emulators
+    entrypoint: gcloud
+    command: ["beta", "emulators", "pubsub", "start", "--host-port=0.0.0.0:8085"]
+    ports:
+      - "8085:8085"
+    restart: always
+  emulator-ui:
+    image: ghcr.io/drehelis/gcp-emulator-ui:main
+    environment:
+      - PUBSUB_EMULATOR_URL=pubsub:8085
+      - STORAGE_EMULATOR_URL=localhost:8080
+      - FIRESTORE_EMULATOR_URL=localhost:8080
+      - DATASTORE_EMULATOR_URL=localhost:8080
+      - DATASTORE_FILE_SERVER_URL=localhost:8080
+    ports:
+      - "8080:80"
+    depends_on:
+      - pubsub
+    restart: always

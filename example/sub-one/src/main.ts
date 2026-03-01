@@ -1,0 +1,28 @@
+import { NestFactory } from '@nestjs/core'
+import type { MicroserviceOptions } from '@nestjs/microservices'
+import { GcpPubSubServer } from 'nestjs-gcp-pubsub'
+
+import { AppModule } from './app.module.js'
+
+async function bootstrap() {
+	const app = await NestFactory.createMicroservice<MicroserviceOptions>(AppModule, {
+		strategy: new GcpPubSubServer({
+			prefix: 'test',
+			topics: ['topic', 'topic-2', 'topic-3'],
+			subscription: 'sub-one',
+			clientConfig: {
+				projectId: 'test-project',
+				apiEndpoint: 'localhost:8085',
+				emulatorMode: true,
+				credentials: {
+					client_email: 'fake@example.com',
+					private_key: 'fake',
+				},
+			},
+		}),
+	})
+
+	await app.listen()
+}
+
+void bootstrap()

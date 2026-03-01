@@ -1,0 +1,36 @@
+{
+	"name": "sub-one",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"private": true,
+	"type": "module",
+	"scripts": {
+		"dev": "nest start --watch"
+	},
+	"dependencies": {
+		"nestjs-gcp-pubsub": "workspace:*",
+		"@google-cloud/pubsub": "catalog:google-cloud",
+		"@nestjs/microservices": "catalog:nestjs",
+		"@nestjs/common": "catalog:nestjs",
+		"@nestjs/core": "catalog:nestjs",
+		"@nestjs/config": "catalog:nestjs",
+		"@nestjs/platform-express": "catalog:nestjs",
+		"reflect-metadata": "catalog:nestjs",
+		"rxjs": "catalog:nestjs"
+	},
+	"devDependencies": {
+		"@nestjs/cli": "catalog:nestjs",
+		"@nestjs/schematics": "catalog:nestjs",
+		"@swc/cli": "catalog:swc",
+		"@swc/core": "catalog:swc",
+		"@types/node": "catalog:typescript",
+		"ts-loader": "catalog:typescript",
+		"ts-node": "catalog:typescript",
+		"typescript": "catalog:typescript"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"packageManager": "pnpm@10.30.3"
+}
