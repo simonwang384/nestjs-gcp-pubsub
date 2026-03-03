@@ -1,5 +1,10 @@
 import type { ClientConfig, PublishOptions, SubscriberOptions } from '@google-cloud/pubsub'
 
+/**
+ * Interface defining GcpPubSubOptions.
+ *
+ * @interface
+ */
 export interface GcpPubSubOptions {
 	/**
 	 * Prefix to prefix to topics and subscriptions. Useful for namespacing in shared Pub/Sub environments.
