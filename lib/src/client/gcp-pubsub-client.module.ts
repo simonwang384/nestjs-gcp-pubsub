@@ -1,7 +1,7 @@
 import { DynamicModule, Module } from '@nestjs/common'
 
-import { createGcpPubSubClientProviders } from './gcp-pubsub-client.providers.js'
-import { GcpPubSubClientModuleOptions } from './gcp-pubsub-client-module-options.js'
+import { createGcpPubSubClientProviders } from './gcp-pubsub-client-providers.js'
+import { GcpPubSubClientModuleOptions } from './interfaces/gcp-pubsub-client-module-options.interface.js'
 
 @Module({})
 export class GcpPubSubClientModule {

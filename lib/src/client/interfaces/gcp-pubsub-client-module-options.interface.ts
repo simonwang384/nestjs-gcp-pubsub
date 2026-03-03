@@ -1,8 +1,12 @@
 import type { InjectionToken, ModuleMetadata, OptionalFactoryDependency, Type } from '@nestjs/common'
 
-import type { GcpPubSubOptions } from '../common/gcp-pubsub-options.js'
+import type { GcpPubSubOptions } from '../../interfaces/gcp-pubsub-options.interface.js'
 
 export interface GcpPubSubClientModuleOptions extends Omit<GcpPubSubOptions, 'subscription'> {
+	/**
+	 * Set module as global
+	 * @default false
+	 */
 	isGlobal?: boolean
 }
 

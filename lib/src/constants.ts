@@ -1,0 +1,3 @@
+export const GCP_PUBSUB_PREFIX_SEPARATOR_DEFAULT = '.'
+export const GCP_PUBSUB_INIT_DEFAULT = true
+export const GCP_PUBSUB_AUTO_ACK_DEFAULT = true

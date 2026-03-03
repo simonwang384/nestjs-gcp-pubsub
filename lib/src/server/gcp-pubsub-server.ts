@@ -10,7 +10,12 @@ import {
 	createSubscriptions,
 	createTopics,
 } from '../common/util.js'
-import type { GcpPubSubServerOptions } from './gcp-pubsub-server-options.js'
+import {
+	GCP_PUBSUB_AUTO_ACK_DEFAULT,
+	GCP_PUBSUB_INIT_DEFAULT,
+	GCP_PUBSUB_PREFIX_SEPARATOR_DEFAULT,
+} from '../constants.js'
+import type { GcpPubSubServerOptions } from './interfaces/gcp-pubsub-server-options.interface.js'
 
 export class GcpPubSubServer extends Server implements CustomTransportStrategy {
 	protected override readonly logger = new Logger(GcpPubSubServer.name)
@@ -24,9 +29,9 @@ export class GcpPubSubServer extends Server implements CustomTransportStrategy {
 		super()
 		this.options = {
 			...options,
-			init: options.init ?? true,
-			prefixSeparator: options.prefixSeparator ?? '_',
-			autoAck: options.autoAck ?? true,
+			init: options.init ?? GCP_PUBSUB_INIT_DEFAULT,
+			prefixSeparator: options.prefixSeparator ?? GCP_PUBSUB_PREFIX_SEPARATOR_DEFAULT,
+			autoAck: options.autoAck ?? GCP_PUBSUB_AUTO_ACK_DEFAULT,
 		}
 		this.pubSubClient = new PubSub(options.clientConfig)
 		this.topics = []
@@ -68,12 +73,12 @@ export class GcpPubSubServer extends Server implements CustomTransportStrategy {
 			subscription
 				.on('message', async (message: Message) => {
 					try {
-						await this.handleMessage(message)
+						await this.handleMessage(message, subscription)
 						if (this.options.autoAck) {
 							message.ack()
 						}
 					} catch (err: unknown) {
-						if (!this.options.autoAck) {
+						if (this.options.autoAck) {
 							message.nack()
 						}
 
@@ -86,7 +91,7 @@ export class GcpPubSubServer extends Server implements CustomTransportStrategy {
 		callback()
 	}
 
-	private async handleMessage(message: Message): Promise<void> {
+	private async handleMessage(message: Message, subscription: Subscription): Promise<void> {
 		let data: unknown
 		try {
 			data = JSON.parse(message.data.toString())
@@ -105,11 +110,14 @@ export class GcpPubSubServer extends Server implements CustomTransportStrategy {
 		const handler = this.getHandlerByPattern(pattern)
 
 		if (!handler) {
-			const error = `No handler found for pattern '${pattern}'. Ensure you have a @MessagePattern or @EventPattern decorator for this pattern.`
+			const error = `No handler found for pattern '${pattern}'. Ensure you have a @EventPattern decorator for this pattern.`
 			this.logger.error(error)
 			throw new Error(error)
 		}
 
+		this.logger.debug(
+			`Received message '${message.id}' from subscription '${subscription.name}' (topic '${(subscription.topic as Topic).name}') with pattern '${pattern}' and data: ${JSON.stringify(data)}`,
+		)
 		await handler(data)
 	}
 

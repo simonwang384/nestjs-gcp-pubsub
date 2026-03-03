@@ -7,7 +7,7 @@ export class AppController {
 	constructor(private readonly appService: AppService) {}
 
 	@Post('publish')
-	async publish() {
-		await this.appService.publish()
+	publish() {
+		this.appService.publish()
 	}
 }

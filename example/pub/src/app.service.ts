@@ -1,13 +1,11 @@
 import { Injectable } from '@nestjs/common'
-import { GcpPubSubClient } from 'nestjs-gcp-pubsub/client/gcp-pubsub-client'
-import { InjectGcpClient } from 'nestjs-gcp-pubsub/client/inject-gcp-client'
-import { lastValueFrom } from 'rxjs'
+import { GcpPubSubClient, InjectGcpPubSubClient } from 'nestjs-gcp-pubsub'
 
 @Injectable()
 export class AppService {
-	constructor(@InjectGcpClient('topic') private readonly gcpPubSubClient: GcpPubSubClient) {}
+	constructor(@InjectGcpPubSubClient('topic') private readonly gcpPubSubClient: GcpPubSubClient) {}
 
-	async publish(): Promise<void> {
-		await lastValueFrom(this.gcpPubSubClient.emit('hello', { message: 'Hellow world' }))
+	publish(): void {
+		this.gcpPubSubClient.emit('hello', { message: 'Hellow world' })
 	}
 }
