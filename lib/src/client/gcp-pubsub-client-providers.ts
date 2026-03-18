@@ -18,19 +18,19 @@ export function createGcpPubSubClientProviders(options: GcpPubSubClientModuleOpt
 	const topicProviders: Provider[] = options.topics.map((topic) => {
 		const separator = options.prefixSeparator ?? GCP_PUBSUB_PREFIX_SEPARATOR_DEFAULT
 		const init = options.init ?? GCP_PUBSUB_INIT_DEFAULT
-		const topicName = compileTopicName(options.prefix, separator, topic)
+		const topicName = compileTopicName(options.prefix, separator, topic.name)
 		return {
 			inject: ['GCP_PUBSUB_CLIENT'],
-			provide: getGcpPubSubClientToken(topic),
+			provide: getGcpPubSubClientToken(topic.name),
 			useFactory: async (pubSubClient: PubSub) => {
-				const topic = pubSubClient.topic(topicName, options.publishOptions)
+				const pubSubTopic = pubSubClient.topic(topicName, { ...options.publishOptions, ...topic.options })
 				if (init) {
-					await createTopics(topic)
+					await createTopics(pubSubTopic)
 				} else {
-					await checkTopicsExist(topic)
+					await checkTopicsExist(pubSubTopic)
 				}
 
-				return new GcpPubSubClient(topic)
+				return new GcpPubSubClient(pubSubTopic)
 			},
 		}
 	})

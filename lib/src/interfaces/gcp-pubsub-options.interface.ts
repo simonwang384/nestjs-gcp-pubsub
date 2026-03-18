@@ -1,5 +1,7 @@
 import type { ClientConfig, PublishOptions, SubscriberOptions } from '@google-cloud/pubsub'
 
+import type { Topic } from './topic.interface.js'
+
 /**
  * Interface defining GcpPubSubOptions.
  *
@@ -19,10 +21,12 @@ export interface GcpPubSubOptions {
 
 	/**
 	 * Topics to subscribe to. The topic name should not include the prefix or separator, as they will be added automatically.
+	 * Optionally PublishOptions can be specified for that topic.
 	 *
 	 * For example, if the prefix is `myapp` and the separator is `.`, then a topic named 'orders' will be subscribed to as `myapp.orders`.
+	 * @type {Topic[]}
 	 */
-	topics: string[]
+	topics: Topic[]
 
 	/**
 	 * Subscription name. The subscription name should not include the prefix, separator, or topic name, as they will be added automatically.
@@ -34,7 +38,7 @@ export interface GcpPubSubOptions {
 	/**
 	 * Whether to automatically create the topics and subscriptions if they do no exist.
 	 *
-	 *  If `false`, the topics and subscriptions must be created manually in GCP Pub/Sub before running the application, otherwise an error will be thrown.
+	 * If `false`, the topics and subscriptions must be created manually in GCP Pub/Sub before running the application, otherwise an error will be thrown.
 	 * @default true
 	 */
 	init?: boolean

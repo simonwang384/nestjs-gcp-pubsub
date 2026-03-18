@@ -36,14 +36,17 @@ export class GcpPubSubServer extends Server implements CustomTransportStrategy {
 		this.pubSubClient = new PubSub(options.clientConfig)
 		this.topics = []
 		this.subscriptions = []
-		for (const topicName of options.topics) {
+		for (const topic of options.topics) {
 			const compiledTopicName = compileTopicName(
 				this.options.prefix,
 				this.options.prefixSeparator as string,
-				topicName,
+				topic.name,
 			)
-			const topic = this.pubSubClient.topic(compiledTopicName, options.publishOptions)
-			this.topics.push(topic)
+			const pubSubTopic = this.pubSubClient.topic(compiledTopicName, {
+				...options.publishOptions,
+				...topic.options,
+			})
+			this.topics.push(pubSubTopic)
 			this.subscriptions.push(
 				this.pubSubClient.subscription(
 					compileSubscriptionName(
@@ -53,7 +56,7 @@ export class GcpPubSubServer extends Server implements CustomTransportStrategy {
 					),
 					{
 						...this.options.subscriptionOptions,
-						topic: topic,
+						topic: pubSubTopic,
 					},
 				),
 			)

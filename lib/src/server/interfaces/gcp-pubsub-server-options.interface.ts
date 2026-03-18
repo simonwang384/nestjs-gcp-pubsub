@@ -2,6 +2,6 @@ import type { GcpPubSubOptions } from '../../interfaces/gcp-pubsub-options.inter
 
 /**
  * Interface defining GcpPubSubServer options.
- * @interface 
+ * @interface
  */
 export interface GcpPubSubServerOptions extends GcpPubSubOptions {}
