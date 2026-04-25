@@ -8,7 +8,11 @@ async function bootstrap() {
 	const app = await NestFactory.createMicroservice<MicroserviceOptions>(AppModule, {
 		strategy: new GcpPubSubServer({
 			prefix: 'test',
-			topics: ['topic', 'topic-2', 'topic-3'],
+			topics: [
+				{ name: 'topic' },
+				{ name: 'topic-2' },
+				{ name: 'topic-3' },
+			],
 			subscription: 'sub-one',
 			clientConfig: {
 				projectId: 'test-project',

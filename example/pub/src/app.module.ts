@@ -10,7 +10,11 @@ import { AppService } from './app.service.js'
 	imports: [
 		GcpPubSubClientModule.forRoot({
 			prefix: 'test',
-			topics: ['topic', 'topic-2', 'topic-3'],
+			topics: [
+				{ name: 'topic' },
+				{ name: 'topic-2' },
+				{ name: 'topic-3' },
+			],
 			clientConfig: {
 				projectId: 'test-project',
 				apiEndpoint: 'localhost:8085',

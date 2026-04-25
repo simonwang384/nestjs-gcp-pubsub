@@ -30,8 +30,9 @@
 		"sourceMap": true,
 		"strictBindCallApply": false,
 		"outDir": "dist",
+		"rootDir": "src",
 		"types": ["vitest/globals"]
 	},
-	"include": ["src"],
-	"exclude": ["test"]
+	"include": ["src/**/*"],
+  "exclude": ["node_modules", "dist", "test", "**/*.spec.ts"]
 }
