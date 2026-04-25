@@ -1,5 +1,5 @@
 import { Module } from '@nestjs/common'
-import { GcpPubSubClientModule } from 'nestjs-gcp-pubsub/client/gcp-pubsub-client.module'
+import { GcpPubSubClientModule } from 'nestjs-gcp-pubsub'
 
 import { AppController } from './app.controller.js'
 import { AppService } from './app.service.js'

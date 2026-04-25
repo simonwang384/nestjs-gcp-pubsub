@@ -29,7 +29,8 @@
 		"removeComments": true,
 		"sourceMap": true,
 		"strictBindCallApply": false,
-		"outDir": "dist"
+		"outDir": "dist",
+		"rootDir": "src"
 	},
 	"include": ["src"],
 	"exclude": ["test"]
