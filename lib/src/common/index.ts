@@ -1,1 +1,1 @@
-export * from '../interfaces/gcp-pubsub-options.interface.js'
+export * from './util.js'
