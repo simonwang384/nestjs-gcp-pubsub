@@ -7,21 +7,22 @@
 	"types": "./dist/index.d.ts",
 	"scripts": {
 		"dev": "concurrently 'tsc -w' 'nest build --watch'",
-		"build": "nest build && tsc --project tsconfig.json"
+		"build": "nest build && tsc --project tsconfig.json",
+		"test": "vitest run"
 	},
 	"publishConfig": {
 		"access": "public"
 	},
 	"exports": {
 		".": {
+			"types": "./dist/index.d.ts",
 			"import": "./dist/index.js",
-			"require": "./dist/index.js",
-			"types": "./dist/index.d.ts"
+			"require": "./dist/index.js"
 		},
 		"./*": {
+			"types": "./dist/*.d.ts",
 			"import": "./dist/*.js",
-			"require": "./dist/*.js",
-			"types": "./dist/*.d.ts"
+			"require": "./dist/*.js"
 		}
 	},
 	"files": [
