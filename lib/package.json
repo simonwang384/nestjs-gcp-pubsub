@@ -2,7 +2,7 @@
 	"name": "nestjs-gcp-pubsub",
 	"version": "0.0.0",
 	"type": "module",
-	"description": "",
+	"description": "NestJS library for Google Cloud Pub/Sub",
 	"main": "./dist/index.js",
 	"types": "./dist/index.d.ts",
 	"scripts": {
@@ -50,8 +50,17 @@
 		"unplugin-swc": "catalog:swc",
 		"vitest": "catalog:vitest"
 	},
-	"keywords": [],
-	"author": "",
+	"keywords": [
+		"nestjs",
+		"gcp",
+		"pubsub"
+	],
+	"homepage": "https://github.com/simonwang384/nestjs-gcp-pubsub#readme",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/simonwang384/nestjs-gcp-pubsub"
+	},
+	"author": "Simon Wang",
 	"license": "ISC",
 	"packageManager": "pnpm@10.30.3"
 }
