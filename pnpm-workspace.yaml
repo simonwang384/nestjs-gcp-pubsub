@@ -10,6 +10,8 @@ onlyBuiltDependencies:
   - protobufjs
 
 catalogs:
+  changesets:
+    '@changesets/cli': ^2.31.0
   biome:
     '@biomejs/biome': ^2.4.13
   concurrently:

@@ -6,10 +6,13 @@
 	"main": "index.js",
 	"scripts": {
 		"check": "biome check .",
-		"check:fix": "biome check . --write"
+		"check:fix": "biome check . --write",
+		"ci:publish": "pnpm publish -r",
+		"changeset": "changeset"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "catalog:biome",
+		"@changesets/cli": "catalog:changesets",
 		"rimraf": "catalog:rimraf"
 	},
 	"keywords": [],
