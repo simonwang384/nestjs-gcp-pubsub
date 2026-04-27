@@ -4,6 +4,9 @@
 	"private": true,
 	"description": "",
 	"main": "index.js",
+	"publishConfig": {
+		"access": "public"
+	},
 	"scripts": {
 		"check": "biome check .",
 		"check:fix": "biome check . --write",
