@@ -1,5 +1,5 @@
 {
-	"name": "nestjs-gcp-pub-sub",
+	"name": "@simonwang/nestjs-gcp-pubsub",
 	"version": "0.0.0",
 	"private": true,
 	"description": "",
@@ -15,8 +15,17 @@
 		"@changesets/cli": "catalog:changesets",
 		"rimraf": "catalog:rimraf"
 	},
-	"keywords": [],
-	"author": "",
+	"homepage": "https://github.com/simonwang384/nestjs-gcp-pubsub#readme",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/simonwang384/nestjs-gcp-pubsub"
+	},
+	"keywords": [
+		"nestjs",
+		"gcp",
+		"pubsub"
+	],
+	"author": "Simon Wang",
 	"license": "ISC",
 	"packageManager": "pnpm@10.30.3"
 }

@@ -1,5 +1,5 @@
 import { registerAs } from '@nestjs/config'
-import type { GcpPubSubClientModuleOptions } from 'nestjs-gcp-pub-sub'
+import type { GcpPubSubClientModuleOptions } from '@simonwang/nestjs-gcp-pubsub'
 
 export const gcpPubSubConfig = registerAs(
 	'gcpPubSub',

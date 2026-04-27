@@ -21,4 +21,4 @@ jobs:
       - name: Lint and Format
         run: pnpm check
       - name: Build
-        run: pnpm --filter nestjs-gcp-pub-sub build
+        run: pnpm --filter @simonwang/nestjs-gcp-pubsub build
