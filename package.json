@@ -1,5 +1,5 @@
 {
-	"name": "nestjs-gcp-pubsub",
+	"name": "nestjs-gcp-pub-sub",
 	"version": "0.0.0",
 	"private": true,
 	"description": "",

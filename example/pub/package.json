@@ -9,7 +9,7 @@
 		"dev": "nest start --watch"
 	},
 	"dependencies": {
-		"nestjs-gcp-pubsub": "workspace:*",
+		"nestjs-gcp-pub-sub": "workspace:*",
 		"@google-cloud/pubsub": "catalog:google-cloud",
 		"@nestjs/microservices": "catalog:nestjs",
 		"@nestjs/common": "catalog:nestjs",

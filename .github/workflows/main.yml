@@ -1,4 +1,4 @@
-name: ci
+name: main
 on:
   push:
     branches-ignore:
@@ -23,7 +23,7 @@ jobs:
       - name: Lint and Format
         run: pnpm check
       - name: Build
-        run: pnpm --filter nestjs-gcp-pubsub build
+        run: pnpm --filter nestjs-gcp-pub-sub build
       - name: Create and publish versions
         uses: changesets/action@v1
         with:

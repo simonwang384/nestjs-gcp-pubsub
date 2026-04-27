@@ -1,4 +1,4 @@
-# nestjs-gcp-pubsub
+# nestjs-gcp-pub-sub
 
 <p align="center">
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
@@ -13,7 +13,7 @@ A simple module following NestJS recommendations for creating a microservice for
 ## Installation
 
 ```bash
-npm i --save @nestjs-gcp-pubsub
+npm i --save @nestjs-gcp-pub-sub
 ```
 
 ## Quick Start
@@ -26,7 +26,7 @@ Import `GcpPubSubClientModule`:
 // Module
 import { Module } from '@nestjs/common'
 import { ConfigModule } from '@nestjs/config'
-import { GcpPubSubClientModule } from 'nestjs-gcp-pubsub'
+import { GcpPubSubClientModule } from 'nestjs-gcp-pub-sub'
 
 @Module({
   controllers: [],
@@ -71,7 +71,7 @@ Inject the `GcpPubSubClient` with the topic name:
 ```ts
 // Service
 import { Injectable } from '@nestjs/common'
-import { GcpPubSubClient, InjectGcpPubSubClient } from 'nestjs-gcp-pubsub'
+import { GcpPubSubClient, InjectGcpPubSubClient } from 'nestjs-gcp-pub-sub'
 
 @Injectable()
 export class AppService {
@@ -91,7 +91,7 @@ Create microservice with `GcpPubSubServer`:
 // main
 import { NestFactory } from '@nestjs/core'
 import type { MicroserviceOptions } from '@nestjs/microservices'
-import { GcpPubSubServer } from 'nestjs-gcp-pubsub'
+import { GcpPubSubServer } from 'nestjs-gcp-pub-sub'
 
 import { AppModule } from './app.module.js'
 

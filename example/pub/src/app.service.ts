@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common'
-import { GcpPubSubClient, InjectGcpPubSubClient } from 'nestjs-gcp-pubsub'
+import { GcpPubSubClient, InjectGcpPubSubClient } from 'nestjs-gcp-pub-sub'
 
 @Injectable()
 export class AppService {
