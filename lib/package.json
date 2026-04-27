@@ -1,6 +1,6 @@
 {
 	"name": "@swang-dev/nestjs-gcp-pubsub",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"type": "module",
 	"description": "NestJS library for Google Cloud Pub/Sub",
 	"main": "./dist/index.js",
