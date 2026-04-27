@@ -137,7 +137,7 @@ export class AppController {
 
 ## References
 
-[NestJS](https://docs.nestjs.com/)
-[NestJS Microservices](https://docs.nestjs.com/microservices/basics)
-[NestJS Custom Transports](https://docs.nestjs.com/microservices/custom-transport)
-[GCP PubSub](https://docs.cloud.google.com/pubsub/docs/overview)
+- [NestJS](https://docs.nestjs.com/)
+- [NestJS Microservices](https://docs.nestjs.com/microservices/basics)
+- [NestJS Custom Transports](https://docs.nestjs.com/microservices/custom-transport)
+- [GCP PubSub](https://docs.cloud.google.com/pubsub/docs/overview)
