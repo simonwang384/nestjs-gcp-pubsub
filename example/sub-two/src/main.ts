@@ -1,6 +1,6 @@
 import { NestFactory } from '@nestjs/core'
 import type { MicroserviceOptions } from '@nestjs/microservices'
-import { GcpPubSubServer } from '@simonwang/nestjs-gcp-pubsub'
+import { GcpPubSubServer } from '@swang-dev/nestjs-gcp-pubsub'
 
 import { AppModule } from './app.module.js'
 

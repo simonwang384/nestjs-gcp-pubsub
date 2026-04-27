@@ -1,5 +1,5 @@
 {
-	"name": "@simonwang/nestjs-gcp-pubsub",
+	"name": "@swang-dev/nestjs-gcp-pubsub",
 	"version": "0.0.1",
 	"type": "module",
 	"description": "NestJS library for Google Cloud Pub/Sub",

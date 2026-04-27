@@ -1,5 +1,5 @@
 {
-	"name": "@simonwang/nestjs-gcp-pubsub",
+	"name": "@swang-dev/nestjs-gcp-pubsub",
 	"version": "0.0.0",
 	"private": true,
 	"description": "",

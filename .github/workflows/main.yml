@@ -23,7 +23,7 @@ jobs:
       - name: Lint and Format
         run: pnpm check
       - name: Build
-        run: pnpm --filter @simonwang/nestjs-gcp-pubsub build
+        run: pnpm --filter @swang-dev/nestjs-gcp-pubsub build
       - name: Create and publish versions
         uses: changesets/action@v1
         with:

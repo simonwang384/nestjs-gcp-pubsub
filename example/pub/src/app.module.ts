@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common'
 import { ConfigModule } from '@nestjs/config'
-import { GcpPubSubClientModule } from '@simonwang/nestjs-gcp-pubsub'
+import { GcpPubSubClientModule } from '@swang-dev/nestjs-gcp-pubsub'
 
 import { AppController } from './app.controller.js'
 import { AppService } from './app.service.js'

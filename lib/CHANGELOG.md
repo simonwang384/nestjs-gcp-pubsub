@@ -1,4 +1,4 @@
-# @simonwang/nestjs-gcp-pubsub
+# @swang-dev/nestjs-gcp-pubsub
 
 ## 0.0.1
 
