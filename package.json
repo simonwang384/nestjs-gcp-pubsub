@@ -4,9 +4,6 @@
 	"private": true,
 	"description": "",
 	"main": "index.js",
-	"publishConfig": {
-		"access": "public"
-	},
 	"scripts": {
 		"check": "biome check .",
 		"check:fix": "biome check . --write",
@@ -18,16 +15,6 @@
 		"@changesets/cli": "catalog:changesets",
 		"rimraf": "catalog:rimraf"
 	},
-	"homepage": "https://github.com/simonwang384/nestjs-gcp-pubsub#readme",
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/simonwang384/nestjs-gcp-pubsub"
-	},
-	"keywords": [
-		"nestjs",
-		"gcp",
-		"pubsub"
-	],
 	"author": "Simon Wang",
 	"license": "ISC",
 	"packageManager": "pnpm@10.30.3"
